@@ -60,7 +60,7 @@ def batch_load(inserted_table,df):
     # iterate over the DataFrame in batches and insert data to Database
     for i in range(0, len(df), batch_size):
         batch = df[i:i + batch_size]
-        batch.to_sql(inserted_table, engine, index=False, if_exists='append',schema="data_ops")
+        batch.to_sql(inserted_table, engine, index=False, if_exists='append',schema="temp")
         print("batch{}Insertion completed.".format(i))
     
 # Develop a function to load data into temp table
